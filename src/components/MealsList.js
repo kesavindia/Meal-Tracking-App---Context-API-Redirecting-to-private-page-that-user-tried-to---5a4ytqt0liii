@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import {MealsContext} from "./MealsProvider"
 
 const MealsList = () => {
-
+    const {meals, tickMeal} = useContext(MealsContext)
     return (
         <div>
             <h2>Meals:</h2>
             <ul>
-                <li>
-                    <input 
-                        type="checkbox"
-                    />
-                    mealName
-                </li>
+                {meals.map((e)=>(
+                    <li key={e.id}>
+                        <input 
+                            type="checkbox"
+                            checked={e.checked||false}
+                            onChange={()=>(e.id)}
+                        />
+                        {e.name}
+                    </li>
+                    ))}
             </ul>
         </div>
     )
