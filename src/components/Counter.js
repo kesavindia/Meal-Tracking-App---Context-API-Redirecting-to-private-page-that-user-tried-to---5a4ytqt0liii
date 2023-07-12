@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import {MealsContext} from "./MealsProvider"
 
 const Counter = () => {
-    const {meals}= useContext(mealsContext)
-    const remainingMeals = meals.filter((e)=>
+    const {meals}= useContext(MealsContext)
+    const remainingMeals = meals.filter(e=>
         !e.ticked).length;
     return (
         <div>

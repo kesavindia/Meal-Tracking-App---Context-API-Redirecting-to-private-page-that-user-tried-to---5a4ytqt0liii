@@ -11,7 +11,7 @@ const MealsProvider = (props) => {
     const [meals, setMeals] = useState(todaysMeals);
 
     const tickMeal = (id) => {
-        setMeals(meals.map((e)=>{e.id==id?{...e,ticked:!e.ticked}:null}))
+        setMeals(meals.map(e=>e.id===id?{...e,ticked:!e.ticked}:e))
     }
 
     return (

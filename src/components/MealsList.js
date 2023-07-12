@@ -7,12 +7,12 @@ const MealsList = () => {
         <div>
             <h2>Meals:</h2>
             <ul>
-                {meals.map((e)=>(
+                {meals.map(e=>(
                     <li key={e.id}>
                         <input 
                             type="checkbox"
-                            checked={e.checked||false}
-                            onChange={()=>(e.id)}
+                            checked={e.ticked||false}
+                            onChange={()=>tickMeal(e.id)}
                         />
                         {e.name}
                     </li>
